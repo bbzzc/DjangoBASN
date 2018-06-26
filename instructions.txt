@@ -208,3 +208,62 @@ python3 manage.py runserver
 Once the server is running you can view the site by navigating to http://127.0.0.1:8000/ in your local web browser. You should see a site error page that looks like this:
 
 
+#$#$#$#$#$##%#%#%  MODELS  #$#$#$#$#$#$#$#$#$#$
+
+Models are usually defined in an application's models.py file. They are implemented as subclasses of django.db.models.Model, and can include fields, methods and metadata. The code fragment below shows a "typical" model, named MyModelName:
+
+from django.db import models
+
+class MyModelName(models.Model):
+    """
+    A typical class defining a model, derived from the Model class.
+    """
+
+    # Fields
+    my_field_name = models.CharField(max_length=20, help_text="Enter field documentation")
+    ...
+
+    # Metadata
+    class Meta: 
+        ordering = ["-my_field_name"]
+
+    # Methods
+    def get_absolute_url(self):
+         """
+         Returns the url to access a particular instance of MyModelName.
+         """
+         return reverse('model-detail-view', args=[str(self.id)])
+    
+    def __str__(self):
+        """
+        String for representing the MyModelName object (in Admin site etc.)
+        """
+        return self.field_name
+
+
+my_field_name = models.CharField(max_length=20, help_text="Enter field documentation")
+
+class Meta:
+    ordering = ["-my_field_name"]
+    ...
+
+ordering = ["title", "-pubdate"]
+
+verbose_name = "BetterName"
+
+
+#$#$#$#$#$#$#$#$#$  Methods   #$#$#$#$#$#$#$#$#
+
+Minimally, in every model you should define the standard Python class method __str__() to return a human-readable string for each object. This string is used to represent individual records in the administration site (and anywhere else you need to refer to a model instance). Often this will return a title or name field from the model.
+
+def __str__(self):
+    return self.field_name
+
+def get_absolute_url(self):
+    """
+    Returns the url to access a particular instance of the model.
+    """
+    return reverse('model-detail-view', args=[str(self.id)])
+Note: Assuming you will use URLs like /myapplication/mymodelname/2 to display individual records for your model (where "2" is the id for a particular record), you will need to create a URL mapper to pass the response and id to a "model detail view" (which will do the work required to display the record). The reverse() function above is able to "reverse" your url mapper (in the above case named 'model-detail-view') in order to create an URL of the right format.
+
+Of course to make this work you still have to write the URL mapping, view, and template!
