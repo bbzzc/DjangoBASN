@@ -31,3 +31,180 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 
 
+locallibrary/         # Website folder
+    manage.py         # Script to run Django tools for this project (created using django-admin)
+    locallibrary/     # Website/project folder (created using django-admin)
+    catalog/          # Application folder (created using manage.py)
+
+
+
+NEXT:
+mkdir locallibrary 
+cd locallibrary
+
+Then 
+
+django-admin startproject locallibrary
+cd locallibrary
+
+This is what it looks like
+
+locallibrary/
+    manage.py
+    locallibrary/
+        settings.py
+        urls.py
+        wsgi.py
+
+settings.py contains all the website settings. This is where we register any applications we create, the location of our static files, database configuration details, etc.  
+urls.py defines the site url-to-view mappings. While this could contain all the url mapping code, it is more common to delegate some of the mapping to particular applications, as you'll see later.
+wsgi.py is used to help your Django application communicate with the web server. You can treat this as boilerplate.
+The manage.py script is used to create applications, work with databases, and start the development web server. 
+
+Runs the new setup
+
+python3 manage.py startapp catalog
+
+now directory looks like:
+
+locallibrary/
+    manage.py
+    locallibrary/
+    catalog/
+        admin.py
+        apps.py
+        models.py
+        tests.py
+        views.py
+        __init__.py
+        migrations/
+
+Open the project settings file locallibrary/locallibrary/settings.py and find the definition for the INSTALLED_APPS list. Then add a new line at the end of the list, as shown in bold below.
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'catalog.apps.CatalogConfig', 
+]
+
+
+We'll use the SQLite database for this example, because we don't expect to require a lot of concurrent access on a demonstration database, and also because it requires no additional work to set up! You can see how this database is configured in settings.py (more information is also included below):
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+TIME_ZONE = 'Europe/London'
+
+
+Now in the urls.py
+
+Open locallibrary/locallibrary/urls.py and note the instructional text which explains some of the ways to use the URL mapper. 
+
+"""locallibrary URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+
+
+Add the lines below to the bottom of the file in order to add a new list item to the urlpatterns list. This new item includes a path() that forwards requests with the pattern catalog/ to the module catalog.urls (the file with the relative URL /catalog/urls.py).
+
+# Use include() to add paths from the catalog application 
+from django.conf.urls import include
+from django.urls import path
+
+urlpatterns += [
+    path('catalog/', include('catalog.urls')),
+]
+
+Add the following lines, again to the bottom of the file:
+
+#Add URL maps to redirect the base URL to our application
+from django.views.generic import RedirectView
+urlpatterns += [
+    path('', RedirectView.as_view(url='/catalog/')),
+]
+
+Add the following final block to the bottom of the file now:
+
+# Use static() to add url mapping to serve static files during development (only)
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+
+### NOTE ########
+Note: There are a number of ways to extend the urlpatterns list (above we just appended a new list item using the += operator to clearly separate the old and new code). We could have instead just included this new pattern-map in the original list definition:
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('catalog/', include('catalog.urls')),
+    path('', RedirectView.as_view(url='/catalog/', permanent=True)),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+In addition, we included the import line (from django.urls import include) with the code that uses it (so it is easy to see what we've added), but it is common to include all your import lines at the top of a Python file.
+
+#####  NOTE   ##################
+
+As a final step, create a file inside your catalog folder called urls.py, and add the following text to define the (empty) imported urlpatterns. This is where we'll add our patterns as we build the application. 
+
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+
+]
+
+When we created the website Django automatically added a number of models for use by the admin section of the site (which we'll look at later). Run the following commands to define tables for those models in the database (make sure you are in the directory that contains manage.py):
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+Important: You'll need to run the above commands every time your models change in a way that will affect the structure of the data that needs to be stored (including both addition and removal of whole models and individual fields).
+
+
+###############  Running the website  ####################
+
+During development you can test the website by first serving it using the development web server, and then viewing it on your local web browser. 
+
+Note: The development web server is not robust or performant enough for production use, but it is a very easy way to get your Django website up and running during development to give it a convenient quick test. By default it will serve the site to your local computer (http://127.0.0.1:8000/), but you can also specify other computers on your network to serve to. For more information see django-admin and manage.py: runserver (Django docs).
+
+Run the development web server by calling the runserver command (in the same directory as manage.py):
+
+python3 manage.py runserver
+
+ Performing system checks...
+
+ System check identified no issues (0 silenced).
+ September 22, 2016 - 16:11:26
+ Django version 1.10, using settings 'locallibrary.settings'
+ Starting development server at http://127.0.0.1:8000/
+ Quit the server with CTRL-BREAK.
+Once the server is running you can view the site by navigating to http://127.0.0.1:8000/ in your local web browser. You should see a site error page that looks like this:
+
+
