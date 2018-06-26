@@ -1,0 +1,33 @@
+$ mkvirtualenv my_django_environment
+
+Running virtualenv with interpreter /usr/bin/python3
+...
+virtualenvwrapper.user_scripts creating /home/ubuntu/.virtualenvs/t_env7/bin/get_env_details
+(my_django_environment) ubuntu@ubuntu:~$
+
+pip3 install django
+
+
+deactivate — Exit out of the current Python virtual environment
+workon — List available virtual environments
+workon name_of_environment — Activate the specified Python virtual environment
+rmvirtualenv name_of_environment — Remove the specified environment.
+
+
+mkdir django_test
+cd django_test
+
+$ python3 manage.py runserver 
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 14 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+
+December 29, 2017 - 03:03:47
+Django version 2.0, using settings 'mytestsite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+
