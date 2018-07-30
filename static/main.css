@@ -1,0 +1,471 @@
+
+html {
+  background-color: rgb(184, 219, 216);
+}
+
+body {
+  padding-top: 3.5rem;
+  background-color: #edeadc;
+}
+
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+* {
+	font-family: "Helvetica Neue Bold", Roboto, Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+header {
+  padding: 1.5rem 1.5rem;
+}
+
+.headings {
+  /* The image used */
+  background-image: url("steel-girders-supporting.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  border: 6px solid #813e20;
+  background-size: contain;
+  /* Full height */
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.tri-row-back {
+  background-color: #cef4ff;
+}
+
+nav {
+  background-color: #026424;
+  width: 100%;
+    margin-right: inherit;
+  margin-left: inherit;
+  margin-right: inherit;
+  color: beige;
+}
+
+nav-color {
+  color: beige;
+}
+
+label {
+  color: #813e20;
+}
+
+excel-first {
+  padding: 0;
+}
+
+.form-top {
+  margin-top: 1rem;
+}
+
+h1 {
+	font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 48px;
+	line-height: 53px;
+	font-weight: 300;
+    color: #813e20;
+}
+
+.banner-style {
+  color: #000000;
+  text-shadow: 2px 2px 4px #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.carousel-style {
+  /*color: #813e20; */
+  color: #000000;
+  text-shadow: 2px 2px 4px #ffffff;
+  text-align: center;
+}
+
+.bg-overlay-e {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("fontenelle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 375px;
+    padding-top: 3.5rem;
+}
+
+.bg-overlay-a {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("jungle.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 375px;
+    padding-top: 3.5rem;
+}
+
+.bg-overlay-c {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("omaha.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 375px;
+    padding-top: 3.5rem;
+}
+
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("steel-girders-supporting.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 375px;
+    padding-top: 3.5rem;
+}
+
+.bg-overlay-car {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("crumpled-paper-texture-brown.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 375px;
+    padding-top: 3.5rem;
+}
+
+.bg-overlay-misc {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("cropped-bobkerrypedbridge.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 375px;
+    padding-top: 3.5rem;
+}
+
+.bg-adv-img {
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("green-grass.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    height: 300px;
+    padding-top: 3.5rem;
+}
+
+.card-deck {
+  background-color: #813e20;
+}
+
+.card {
+  padding: 14px;
+}
+
+.card-title {
+  color: #813e20;
+}
+
+.lists {
+  color: #026424;
+}
+
+h2 {
+	font-size: 36px;
+	line-height: 40px;
+}
+
+.h2-green {
+    color: #04431a;
+}
+
+.text-light {
+    color: #edeadc;
+    text-align: left;
+    font-weight: normal;
+}
+
+.text-mid {
+    color: #5c5857;
+    text-align: left;
+    font-weight: normal;
+}
+
+.text-grey {
+    color: dimgrey;
+}
+
+.text-black {
+    color: black;
+    text-align: left;
+    font-weight: normal;
+}
+
+.excel-main {
+    color: #5c5857;
+    text-align: center;
+/*    font-weight: bold; */
+    font-size: 18px;
+}
+
+.excel-head {
+    color: #5c5857;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 29px;
+    color: #547980;
+}
+
+.h3-green {
+    color: #547980;
+}
+
+.carousel-caption {
+  color: #edeadc;
+}
+.main-list {
+	text-decoration: underline;
+}
+
+.breadcrumb {
+	text-align: center;
+	background-color: transparent;
+	border-bottom: 1px solid #eee;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	margin-bottom: 48px;
+}
+
+p {
+	font-family: "Helvetica Neue", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+    color: #5c5857;
+}
+
+.p-color {
+    color: #7B7573;
+}
+
+strong {
+	font-size: 16px;
+	color: #813e20;
+	line-height: 24px;
+}
+
+a {
+	font-size: 14px;
+	color: #edeadc;
+	line-height: 17px;
+}
+
+.padding-top {
+	padding-top: 30px;
+}
+
+.padding-bottom {
+	padding-bottom: 30px;
+}
+
+.margin-right {
+	margin-right: 30px;
+}
+
+.padding-none {
+	padding: 0;
+}
+
+.btn-card {
+	padding: 15px;
+	margin: 0;
+	border-color: #4a6b72;
+	border-width: 2px;
+	color: #4a6b72;
+    background-color: #4a6b72;
+	font-family: "Helvetica Neue Light", Roboto, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+    align-items: center;
+}
+
+.btn-card:hover {
+	border-color: #0d4e5c;
+}
+
+.btn-card.delete {
+	border-color: #aaaaaa;
+	color: #aaaaaa;
+}
+
+.btn-card.delete:hover {
+	border-color: #04431a;
+	color: red;
+}
+.glyphicon {
+	margin-right: 8px;
+}
+
+article {
+		background-color: inherit;
+		border-right: 5px solid #005fe2;
+}
+
+.card-body {
+  background-color: #813e20;
+  background-image: url("crumpled-paper-texture-brown.jpg");
+  color: #5c5857;
+  align-items: center;
+}
+
+.bg-adv-info-img {
+  background-color: #edeadc;
+  background-image: url("crumpled-paper-texture-brown.jpg");
+
+  align-items: center;
+}
+
+.bg-dark-basu {
+    background-image: url("green-grass.jpg");
+}
+
+.bg-light-basu {
+    background-image: url("crumpled-paper-texture-brown.jpg");
+}
+
+.bg-other-basu {
+    background-image: url("brick-red-bg.jpg");
+}
+
+.advo-text {
+    color: black;
+}
+
+.top-item {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.top-item p {
+	margin-bottom: 0;
+	line-height: 16px;
+}
+.top-item a {
+	margin-bottom: 0;
+	line-height: 16px;
+	font-size: 16px;
+	color: #7B7573;
+	font-weight: 400;
+}
+.divider {
+	height: 15px;
+}
+
+.green-line {
+    background-color: #04431a;
+    height: 25px;
+}
+
+.banner.main {
+	height: 150px;
+	background: url("steel-girders-supporting.jpg");
+	background-position: right;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.banner.item {
+	height: 150px;
+	background-color: #30b798;
+}
+.banner.profile {
+	height: 150px;
+	background-color: #A6E8EB;
+}
+.banner h1 {
+	margin: 45px 0;
+}
+ .catagory-list {
+ 	background-color: #F0F0F0;
+ 	padding: 20px;
+}
+
+.cat-img {
+    width: 150px;
+    height: 150px;
+}
+
+.column-name {
+ padding: 5px;
+}
+
+ .catagory-col {
+ 	float: left;
+}
+
+.item_column {
+    border-left-width: 2px;
+    border-left-color: grey;
+		float: right;
+}
+
+.latest {
+ color: #4a4a4a;
+ padding: 2px;
+}
+
+.catagory-item {
+	background: #F0F0F0;
+	padding: 10px;
+	margin: 5px;
+	margin-left: -20px;
+}
+.item-price {
+	font-weight: 700;
+}
+
+.item-img {
+    width: 300px;
+    height: 300px;
+}
+
+.creator {
+	padding-right: 20px;
+	margin-top: -20px;
+	text-align: right;
+	float:right;
+}
+.creator img {
+	width: 100px;
+	border-radius: 50%;
+}
+.creator figcaption {
+	font-size: 14px;
+	color: #7B7573;
+	font-weight: 400;
+	margin-top: -20px;
+}
+
+.flash {
+	background-color: #98FB98;
+	width:100%;
+	text-decoration: none;
+}
+
+.flash li {
+	list-style-type: none;
+	text-align: center;
+
+}
