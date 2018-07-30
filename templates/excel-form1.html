@@ -1,0 +1,317 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "nav.html" %}
+
+<main role="main" class="container">
+
+  <div class="container-fluid no-padding bg-overlay-e">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="caption">
+          <h1 class="banner-style">Boots & Suits United</h1>
+          <h2 class="carousel-style">"Building the Bridge"</h2>
+          <h2 class="carousel-style">Excel With a Mentor</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beginning of Excel Form -->
+  <div class="row divider green">
+    <div class="col-md-12"></div>
+  </div>
+
+  <div class = 'flash'>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+        	<li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+<!-- Beginning of Excel Form -->
+<div class="row divider green">
+<div class="col-md-12"></div>
+</div>
+<div class="row banner menu">
+<div class="col-md-12 padding-none">
+  <h1 class="text-center">Register for Excel with a Mentor</h1>
+</div>
+</div>
+
+<!-- Input Form 1 -->
+<div class="container-fluid no-padding">
+  <form action="{{ url_for('newClient')}}" method = "post">
+      <div class="form-group">
+        <div class="input-form">
+          <div class="row">
+            <div class="excel-first col-md-5">
+              <label for="f-name">First Name:</label>
+              <input type ="text" maxlength="100" class="form-control" name="f-name">
+            </div>
+            <div class="excel-first col-md-5">
+              <label for="l-name"> Last Name:</label>
+              <input type="text" maxlength="100" class="form-control" name="l-name">
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+          </br>
+
+          <div class="row">
+            <div class="excel-first col-md-12">
+              <label for="addr-1">Address 1:</label>
+              <input type ="text" maxlength="200" class="form-control" name="addr-1">
+            </div>
+          </div>
+          </br>
+
+          <div class="row">
+            <div class="excel-first col-md-12">
+              <label for="addr-2">Address 2:</label>
+              <input type="text" maxlength="200" class="form-control" name="addr-2">
+            </div>
+          </div>
+          </br>
+
+          <div class="row">
+            <div class="excel-first col-md-5">
+              <label for="city">City:</label>
+              <input type ="text" maxlength="100" class="form-control" name="city">
+            </div>
+            <div class="excel-first col-md-2">
+              <label for="state"> State:</label>
+              <input type="text" maxlength="2" class="form-control" name="state">
+            </div>
+            <div class="excel-first col-md-3">
+              <label for="zip">Zip:</label>
+              <input type ="text" maxlength="10" class="form-control" name="zip">
+            </div>
+          </div>
+          </br>
+
+          <div class="row">
+            <div class="excel-first col-md-10">
+              <label for="p_email">Personal Email:</label>
+              <input type="text" maxlength="200" class="form-control" name="p_email">
+            </div>
+          </div>
+          </br>
+
+          <div class="row">
+            <div class="excel-first col-md-10">
+              <label for="w_email">Work Email:</label>
+              <input type="text" maxlength="200" class="form-control" name="w_email">
+            </div>
+          </div>
+          </br>
+
+          <div class="row">
+            <div class="excel-first col-md-4">
+              <label for="h-phone">Home Phone:</label>
+              <input type="text" maxlength="15" class="form-control" name="h-phone">
+            </div>
+            <div class="excel-first col-md-4">
+              <label for="c-phone">Cell Phone:</label>
+              <input type="text" maxlength="15" class="form-control" name="c-phone">
+            </div>
+            <div class="excel-first col-md-4">
+              <label for="w-phone">Work Phone:</label>
+              <input type="text" maxlength="15" class="form-control" name="w-phone">
+            </div>
+          </div>
+        </br>
+
+        <div class="row">
+          <div class="excel-first col-md-4">
+            <label for="phone-pref">Phone Preference: </label>
+            <select class="form-control" id="sel2">
+              <option>Home</option>
+              <option>Cell</option>
+              <option>Work</option>
+            </select>
+          </div>
+          </br>
+
+          <div class="excel-first col-md-4">
+            <label for="status">Status: </label>
+            <select class="form-control" id="sel2">
+              <option>Retired</option>
+              <option>Spouse</option>
+              <option>Seperated</option>
+              <option>Seperating Soon (18 months)</option>
+            </select>
+          </div>
+        </div>
+        </br>
+
+        <div class="featurette-divider"></div>
+
+          <h3>Education</h3>
+          <div class="row">
+            <div class="excel-first col-md-5">
+              <label for="school_name">College Name:</label>
+              <input type ="text" maxlength="100" class="form-control" name="school_name">
+            </div>
+
+            <div class="row">
+              <div class="excel-first col-md-12">
+                <label for="sch_addr-1">Address 1:</label>
+                <input type ="text" maxlength="200" class="form-control" name="sch_addr-1">
+              </div>
+            </div>
+            </br>
+
+            <div class="row">
+              <div class="excel-first col-md-12">
+                <label for="sch_addr-2">Address 2:</label>
+                <input type="text" maxlength="200" class="form-control" name="sch_addr-2">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="excel-first col-md-5">
+                <label for="school_city">City:</label>
+                <input type ="text" maxlength="100" class="form-control" name="school_city">
+              </div>
+              <div class="excel-first col-md-2">
+                <label for="school_state">State:</label>
+                <input type="text" maxlength="2" class="form-control" name="school_state">
+              </div>
+              <div class="excel-first col-md-3">
+                <label for="school_zip">Zip:</label>
+                <input type ="text" maxlength="10" class="form-control" name="school_zip">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="excel-first col-md-10">
+                <label for="degree">Degree:</label>
+                <input type="text" maxlength="200" class="form-control" name="degree">
+              </div>
+            </div>
+            </br>
+
+            <div class="row">
+              <div class="excel-first col-md-5">
+                <label for="major">Major:</label>
+                <input type="text" maxlength="200" class="form-control" name="major">
+              </div>
+              <div class="excel-first col-md-5">
+                <label for="minor">Minor:</label>
+                <input type="text" maxlength="200" class="form-control" name="minor">
+              </div>
+            </div>
+            </br>
+
+            <div class="row">
+              <div class="excel-first col-md-4">
+                <label for="start_date">Start Date:</label>
+                <input type="text" maxlength="25" class="form-control" name="start_date">
+              </div>
+              <div class="excel-first col-md-4">
+                <label for="end_date">End Date:</label>
+                <input type="text" maxlength="25" class="form-control" name="end_date">
+              </div>
+              <div class="excel-first col-md-4">
+                <label for="status">Status:</label>
+                <input type="text" maxlength="25" class="form-control" name="status">
+              </div>
+            </div>
+            </br>
+
+            <div class="featurette-divider"></div>
+
+            <h3>Other Education</h3>
+          </br>
+            <div class="row">
+              <div class="excel-first col-md-5">
+                <label for="school_name2">College Name:</label>
+                <input type ="text" maxlength="100" class="form-control" name="school_name2">
+              </div>
+
+              <div class="row">
+                <div class="excel-first col-md-12">
+                  <label for="sch2_addr-1">Address 1:</label>
+                  <input type ="text" maxlength="200" class="form-control" name="sch2_addr-1">
+                </div>
+              </div>
+              </br>
+
+              <div class="row">
+                <div class="excel-first col-md-12">
+                  <label for="sch2_addr-2">Address 2:</label>
+                  <input type="text" maxlength="200" class="form-control" name="sch2_addr-2">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="excel-first col-md-5">
+                  <label for="school_city2">City:</label>
+                  <input type ="text" maxlength="100" class="form-control" name="school_city2">
+                </div>
+                <div class="excel-first col-md-2">
+                  <label for="school_state2">State:</label>
+                  <input type="text" maxlength="2" class="form-control" name="school_state2">
+                </div>
+                <div class="excel-first col-md-3">
+                  <label for="school_zip2">Zip:</label>
+                  <input type ="text" maxlength="10" class="form-control" name="school_zip2">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="excel-first col-md-10">
+                  <label for="degree2">Degree:</label>
+                  <input type="text" maxlength="200" class="form-control" name="degree2">
+                </div>
+              </div>
+              </br>
+
+              <div class="row">
+                <div class="excel-first col-md-5">
+                  <label for="major2">Major:</label>
+                  <input type="text" maxlength="200" class="form-control" name="major2">
+                </div>
+                <div class="excel-first col-md-5">
+                  <label for="minor2">Minor:</label>
+                  <input type="text" maxlength="200" class="form-control" name="minor2">
+                </div>
+              </div>
+              </br>
+
+              <div class="row">
+                <div class="excel-first col-md-4">
+                  <label for="start_date2">Start Date:</label>
+                  <input type="text" maxlength="25" class="form-control" name="start_date2">
+                </div>
+                <div class="excel-first col-md-4">
+                  <label for="end_date2">End Date:</label>
+                  <input type="text" maxlength="25" class="form-control" name="end_date2">
+                </div>
+                <div class="excel-first col-md-4">
+                  <label for="status2">Status:</label>
+                  <input type="text" maxlength="25" class="form-control" name="status2">
+                </div>
+              </div>
+              </br>
+
+              <div class="featurette-divider"></div>
+
+        <button type="submit" class="btn btn-default" id="submit" type="submit">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Continue</button>
+        <a href = '{{url_for('newClientGen')}}'></a>
+        <button class="btn btn-default delete" type="button">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+        <a href = '{{url_for('showExcel')}}'></a>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+
+{% include "footer.html" %}
+{% endblock %}

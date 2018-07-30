@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "nav.html" %}
+<main role="main">
+
+  <div class="container-fluid no-padding bg-overlay-e">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="caption">
+          <h1 class="banner-style">Boots & Suits United</h1>
+          <h2 class="carousel-style">"Building the Bridge"</h2>
+          <h2 class="carousel-style">Excel with a Mentor</h2></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container-fluid no-padding bg-overlay-e">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <div class="caption">
+                <h1 class="banner-style">Boots & Suits United</h1>
+                <h2 class="carousel-style">"Building the Bridge"</h2>
+                <h2 class="carousel-style">Excel with a Mentor</h2></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="excel-head">Partnering Military with the Civilian Sector</h1>
+        <p class="excel-main">Mentorship is the best path to career success, hands down. The benefits
+          that you can gain from a good mentor relationship can outweigh grad
+          school, natural ability, and even dumb luck. The key is to have the
+          foresight and humility to ask to be mentored.  If you start here,
+          you’ll find that there are plenty of accelerators in your life who
+          can add value. More importantly, you can take it upon yourself to add
+          tremendous value for them.  In doing so, you’ll get the most out of
+          the mentor relationship and find success in your life and career, sooner.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row text-mid">
+        <div class="marketing col-md-4 text-mid">
+  <!--        <p class="marketing text-mid">The Excel with a Mentor (EWAM) program is designed to assist in the
+  -->        <p>The Excel with a Mentor (EWAM) program is designed to assist in the
+
+            transition of military members into the civilian workforce with the
+            guidance and expertise of an industry professional.</p>
+        </div>
+        <div class="col-md-4 text-mid">
+          <p >Thank you for everything that you have done to serve your country
+            and community!  We are excited about your interest in this mentorship
+            opportunity.  This program will connect you with local seasoned
+            professionals committed to working with you.</p>
+        </div>
+        <div class="col-md-4 text-mid">
+          <h2>Our program will assist you with:</h2>
+          <p>Career goals and objectives</p>
+          <p>Job exploration</p>
+          <p>Building networks</p>
+          <p>Career preparation</p>
+        </div>
+
+        <div class="jumbotron">
+          <div class="container">
+            <p>Begin your new journey today!  Sign up and tell us a little about
+              yourself and one of our members will be in contact with you, shortly.</p>
+            <p><a href="{{url_for('newClient')}}" role="button" class="btn btn-card">Learn More</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+    <p><a href="{{url_for('newClient')}}" role="button" class="btn btn-card">Sign Up</a></p>
+</main>
+{% include "footer.html" %}
+{% endblock %}

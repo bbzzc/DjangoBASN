@@ -1,0 +1,262 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "nav.html" %}
+
+<main role="main" class="container">
+
+  <div class="container-fluid no-padding bg-overlay-e">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="caption">
+          <h1 class="banner-style">Boots & Suits United</h1>
+          <h2 class="carousel-style">"Building the Bridge"</h2>
+          <h2 class="carousel-style">Excel With a Mentor</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Beginning of Excel Form -->
+  <div class="row divider green">
+    <div class="col-md-12"></div>
+  </div>
+
+  <div class = 'flash'>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+        	<li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+
+  <div class="row banner menu">
+    <div class="col-md-12 padding-none">
+      <h1 class="text-center">Continuing the Registration Process</h1>
+    </div>
+  </div>
+
+      <!-- Input Form 1 -->
+  		<div class="container-fluid no-padding">
+        <form action="{{ url_for('newClientGen')}}" method = "post">
+    				<div class="form-group">
+    					<div class="input-form">
+
+                <h3>What careers and/or industries are you interested in?</h3>
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <label for="careers">Career Possibilities:</label>
+                    <input type="text" maxlength="255" class="form-control" name="careers" value="{{x.careers}}">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <input type="text" maxlength="255" class="form-control" name="careers" value="{{x.careers}}">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <input type="text" maxlength="255" class="form-control" name="careers" value="{{x.careers}}">
+                  </div>
+                </div>
+
+                </br>
+
+                <h3>What are your top three non-negotiables?</h3>
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <label for="nonNeg_item">Non-Negotiables:</label>
+                    <input type="text" maxlength="255" class="form-control" name="nonNeg_item" value="{{x.nonNeg_item}}">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <input type="text" maxlength="255" class="form-control" name="nonNeg_item" value="{{x.nonNeg_item}}">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <input type="text" maxlength="255" class="form-control" name="nonNeg_item" value="{{x.nonNeg_item}}">
+                  </div>
+                </div>
+
+                </br>
+
+                <div class="featurette-divider"></div>
+
+                <h3>Education</h3>
+                <div class="row">
+                  <div class="excel-first col-md-5">
+        						<label for="school_name">College Name:</label>
+        						<input type ="text" maxlength="100" class="form-control" name="school_name" value="{{x.school_Name }}">
+                  </div>
+
+                  <div class="row">
+                    <div class="excel-first col-md-5">
+                      <label for="city">City:</label>
+    						      <input type ="text" maxlength="100" class="form-control" name="city" value="{{x.city}}">
+                    </div>
+                    <div class="excel-first col-md-2">
+                      <label for="state"> State:</label>
+          						<input type="text" maxlength="2" class="form-control" name="state" value="{{x.state}}">
+                    </div>
+                    <div class="excel-first col-md-3">
+                      <label for="Zip">Zip:</label>
+    						      <input type ="text" maxlength="10" class="form-control" name="zip" value="{{x.zip}}">
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="excel-first col-md-10">
+                      <label for="degree">Degree:</label>
+          						<input type="text" maxlength="200" class="form-control" name="degree" value="{{x.degree}}">
+                    </div>
+                  </div>
+                  </br>
+
+                  <div class="row">
+                    <div class="excel-first col-md-5">
+                      <label for="major">Major:</label>
+          						<input type="text" maxlength="200" class="form-control" name="major" value="{{x.major}}">
+                    </div>
+                    <div class="excel-first col-md-5">
+                      <label for="major">Minor:</label>
+          						<input type="text" maxlength="200" class="form-control" name="minor" value="{{x.minor}}">
+                    </div>
+                  </div>
+                  </br>
+
+                  <div class="row">
+                    <div class="excel-first col-md-5">
+                      <label for="major">Start Date:</label>
+          						<input type="text" maxlength="200" class="form-control" name="start_date" value="{{x.start_date}}">
+                    </div>
+                    <div class="excel-first col-md-5">
+                      <label for="end_date">End Date:</label>
+          						<input type="text" maxlength="200" class="form-control" name="end_date" value="{{x.end_date}}">
+                    </div>
+                  </div>
+                  </br>
+
+                  <div class="featurette-divider"></div>
+
+                  <h3>Other Education</h3>
+                  <div class="row">
+                    <div class="excel-first col-md-5">
+          						<label for="school_name">College Name:</label>
+          						<input type ="text" maxlength="100" class="form-control" name="school_name" value="{{x.school_Name }}">
+                    </div>
+
+                    <div class="row">
+                      <div class="excel-first col-md-5">
+                        <label for="city">City:</label>
+      						      <input type ="text" maxlength="100" class="form-control" name="city" value="{{x.city}}">
+                      </div>
+                      <div class="excel-first col-md-2">
+                        <label for="state"> State:</label>
+            						<input type="text" maxlength="2" class="form-control" name="state" value="{{x.state}}">
+                      </div>
+                      <div class="excel-first col-md-3">
+                        <label for="Zip">Zip:</label>
+      						      <input type ="text" maxlength="10" class="form-control" name="zip" value="{{x.zip}}">
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="excel-first col-md-10">
+                        <label for="degree">Degree:</label>
+            						<input type="text" maxlength="200" class="form-control" name="degree" value="{{x.degree}}">
+                      </div>
+                    </div>
+                    </br>
+
+                    <div class="row">
+                      <div class="excel-first col-md-5">
+                        <label for="major">Major:</label>
+            						<input type="text" maxlength="200" class="form-control" name="major" value="{{x.major}}">
+                      </div>
+                      <div class="excel-first col-md-5">
+                        <label for="major">Minor:</label>
+            						<input type="text" maxlength="200" class="form-control" name="minor" value="{{x.minor}}">
+                      </div>
+                    </div>
+                    </br>
+
+                    <div class="row">
+                      <div class="excel-first col-md-5">
+                        <label for="major">Start Date:</label>
+            						<input type="text" maxlength="200" class="form-control" name="start_date" value="{{x.start_date}}">
+                      </div>
+                      <div class="excel-first col-md-5">
+                        <label for="end_date">End Date:</label>
+            						<input type="text" maxlength="200" class="form-control" name="end_date" value="{{x.end_date}}">
+                      </div>
+                    </div>
+                    </br>
+
+                    <div class="featurette-divider"></div>
+
+
+
+                <div class="row">
+                  <div class="excel-first col-md-10">
+                    <label for="w_email">Work Email:</label>
+        						<input type="text" maxlength="200" class="form-control" name="w_email" value="{{x.w_email}}">
+                  </div>
+                </div>
+                </br>
+
+                <div class="row">
+                  <div class="excel-first col-md-4">
+                    <label for="h-phone">Home Phone:</label>
+  						      <input type="text" maxlength="15" class="form-control" name="h-phone" value="{{x.h-phone}}">
+                  </div>
+                  <div class="excel-first col-md-4">
+                    <label for="c-phone">Cell Phone:</label>
+        						<input type="text" maxlength="15" class="form-control" name="c-phone" value="{{x.c-phone}}">
+                  </div>
+                  <div class="excel-first col-md-4">
+                    <label for="w-phone">Work Phone:</label>
+        						<input type="text" maxlength="15" class="form-control" name="w-phone" value="{{x.w-phone}}">
+                  </div>
+                </div>
+              </br>
+
+              <div class="row">
+                <div class="excel-first col-md-4">
+                  <label for="phone-pref">Phone Preference: </label>
+                  <select class="form-control" id="sel2">
+                    <option>Home</option>
+                    <option>Cell</option>
+                    <option>Work</option>
+                  </select>
+                </div>
+                </br>
+
+                <div class="excel-first col-md-4">
+                  <label for="status">Status: </label>
+                  <select class="form-control" id="sel2">
+                    <option>Retired</option>
+                    <option>Spouse</option>
+                    <option>Seperated</option>
+                    <option>Seperating Soon (18 months)</option>
+                  </select>
+                </div>
+              </div>
+              </br>
+
+    					<button type="submit" class="btn btn-default" id="submit" type="submit">
+    					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+    					<a href = '{{url_for('newClient')}}'></a>
+    					<button class="btn btn-default delete" type="button">
+    						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+    					<a href = '{{url_for('showExcel')}}'></a>
+    				</div>
+          </div>
+  			</form>
+  		</div>
+
+{% include "footer.html" %}
+{% endblock %}

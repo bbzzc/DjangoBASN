@@ -1,0 +1,142 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "nav.html" %}
+
+<main role="main" class="container">
+
+  <div class="container-fluid no-padding bg-overlay">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="caption">
+          <h1 class="banner-style">Boots & Suits United</h1>
+          <h2 class="carousel-style">"Building the Bridge"</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <div class="container-fluid no-padding bg-overlay-car">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="first-slide" src="steel-girders-supporting.jpg" alt="Cowboy Bridge">
+          <div class="container">
+              <div class="carousel-caption">
+                <h1 class="carousel-style text-right">Our Mission:</h1>
+                <p class="carousel-style text-right">To foster a strong community network and serve as a resource and advocate for all active duty military members, retirees, National Guard & Reserves, veterans, and their family members with the hopes of enhancing their lives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="second-slide" src="steel-girders-supporting.jpg" alt="Cowboy Bridge">
+              <div class="container second-slide">
+              <div class="carousel-caption">
+                <h1 class="banner-style">Boots & Suits United</h1>
+                <h2 class="banner-style">"Building the Bridge"</h2>
+                <h1 class="carousel-style text-right">Our Vision: </h1>
+                <p class="carousel-style text-right">To become a reccognized and widely respected leader within the community empowering armed forces members during their transition from military service to private sector insuring they receive the meaningful and rewarding employment educational opportunities and benefits.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+
+  <div class="card-deck py-2">
+    <div class="card-deck">
+      <div class="card box-shadow">
+        <img class="card-img-top" src="{{url_for('static', filename='fontenelle-card.jpg')}}" alt="Fontenelle Forest Boardwalk">
+        <div class="card-body">
+          <h3 class="card-title">Excel with a Mentor</h3>
+          <p class="card-text">Providing all levels of mentorship with professionals within the community.</p>
+        </div>
+        <div class="card-footer">
+          <small><a href="{{url_for('showExcel')}}" role="button" class="btn btn-card">Learn More</a></small>
+        </div>
+      </div>
+
+    <div class="card box-shadow">
+      <img class="card-img-top" src="{{url_for('static', filename='jungle-card.jpeg')}}" alt="Lied Jungle Rope Bridge">
+      <div class="card-body">
+        <h3 class="card-title">Advocacy</h3>
+        <p class="card-text">Provide comprehensive support through legislative, education and individual support.</p>
+      </div>
+      <div class="card-footer">
+        <small><a href="{{url_for('showAdvocacy')}}" role="button" class="btn btn-card">Learn More</a></small>
+      </div>
+    </div>
+
+    <div class="card box-shadow">
+      <img class="card-img-top" src="{{url_for('static', filename='omaha-card.jpeg')}}" alt="Downtown Omaha">
+      <div class="card-body">
+        <h3 class="card-title">Community Partnership</h3>
+        <p class="card-text">Broaden our resources through partnering with community leader, organizations and support agencies.</p>
+      </div>
+      <div class="card-footer">
+        <small><a href="{{url_for('showComm')}}" role="button" class="btn btn-card">Learn More</a></small>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+    {% if testimony !=[] %}
+      {% for x in testimony %}
+        {% if x.cat_id % 2 == 0: %}
+            <div class="row featurette">
+              <div class="col-md-7">
+                <h2 class="featurette-heading h2-green">{{x.keywords}}</h2>
+                <h3 class="text-muted">{{x.catagory}}</h3>
+                <p class="lead">{{x.testimony}}</p>
+              </div>
+              <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" src="{{x.picture}}">
+              </div>
+            </div>
+
+            <hr class="featurette-divider">
+          {% else %}
+
+            <div class="row featurette">
+              <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading h2-green">{{x.keywords}}</h2>
+                <h3 class="text-muted">{{x.catagory}}</h3>
+                <p class="lead">{{x.testimony}}</p>
+              </div>
+              <div class="col-md-5 order-md-1">
+                <img class="featurette-image img-fluid mx-auto" src="{{x.picture}}">
+              </div>
+            </div>
+
+            <hr class="featurette-divider">
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+{% include "footer.html" %}
+{% endblock %}

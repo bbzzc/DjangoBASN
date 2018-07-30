@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+{% block content %}
+{% include "nav.html" %}
+
+<div class="container-fluid no-padding bg-overlay-c">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="caption">
+            <h1 class="banner-style">Boots & Suits United</h1>
+            <h2 class="carousel-style">"Building the Bridge"</h2>
+            <h2 class="carousel-style">Community Partnerships</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="container-fluid no-padding green-line">
+		<div class="col-md-12 green-line"></div>
+	</div>
+
+  <div>
+    <h1 class="text-center">Connecting the Community with the Military</h1>
+    <h3 class="text-right">Register, and someone will contact you soon.</h3>
+    <p><a href="{{url_for('newComm')}}" role="button" class="btn btn-card text-right">Register</a></p>
+  </div>
+
+  <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-dark-basu mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5 text-light">Fundraising</h2>
+          <p class="lead text-light"></p>
+        </div>
+        <div class="bg-light-basu box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-light-basu mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5 text-black">Hosting Social Events</h2>
+          <p class="lead text-black"></p>
+        </div>
+        <div class="bg-dark-basu box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-light-basu mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5 text-black">Professional Organizations</h2>
+          <p class="lead text-black"></p>
+        </div>
+        <div class="bg-dark-basu box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-other-basu mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5 text-light">Corporate Outreach</h2>
+          <p class="lead text-light"></p>
+        </div>
+        <div class="bg-light-basu box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-dark-basu mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-black overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5 text-light">Marketing & Developing Relationships</h2>
+          <p class="lead text-light"></p>
+        </div>
+        <div class="bg-light-basu box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+      <div class="bg-light-basu mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5 text-black">Milestones</h2>
+          <p class="lead text-black">Measuring trends and data</p>
+        </div>
+        <div class="bg-dark-basu box-shadow mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      </div>
+    </div>
+
+{% include "footer.html" %}
+{% endblock %}
