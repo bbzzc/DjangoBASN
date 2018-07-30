@@ -1,0 +1,24 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+
+
+[packages]
+
+django = "*"
+gunicorn = "*"
+django-heroku = "*"
+Flask = "*"
+sqlalchemy = "*"
+httplib2 = "*"
+requests = "*"
+oauth2client = "*"
+flask_httpauth = "*"
+flask_debug = "*"
+
+
+
+[requires]
+
+python_version = "3.6"
